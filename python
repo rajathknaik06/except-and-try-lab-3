@@ -1,0 +1,30 @@
+""" Rohan is working on a program to calculate the total expenses from a list of transactions. He inputs the number of transactions, N, and their respective values. However, he wants the program to handle situations where fewer than N values are entered. If this happens, the program should display a "list index out of range" message using exception handling.
+
+Input format :
+The first line of input contains a number of values N
+
+The second line of input contains space-separated values
+
+Output format :
+The output displays the sum of the N values.
+
+If the number of values is less than N, then it displays an IndexError message.
+
+"""
+
+
+count = int(input())
+inp = input().split()
+result = 0
+exception = 'False'
+
+for i in range(count):
+    try:
+        result = result + int(inp[i])
+    except IndexError as e:
+        print(e)
+        exception = 'True'
+        break
+
+if exception != 'True':
+    print(result)
